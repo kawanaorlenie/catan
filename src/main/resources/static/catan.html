@@ -1,0 +1,37 @@
+<html ng-app="catanApp">
+<head>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script type="text/javascript" src="catan.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="BoardController">
+
+	<!-- <button ng-click="init()">Start</button> -->
+
+	<div class="ctn-board">
+		<ctn-hex ng-repeat="field in game.board.fields"></ctn-hex>
+		<ctn-buildable ng-repeat="vertix in game.board.vertices"></ctn-buildable>
+		<ctn-pathable ng-repeat="edge in game.board.edges"></ctn-pathable>
+	</div>
+
+	<div class="ctn-hand">
+		<span ctn-path id="path{{path.id}}"
+			ng-repeat="path in game.hand.paths"></span> <span ctn-settlement
+			id="settlement{{settlement.id}}"
+			ng-repeat="settlement in game.hand.settlements"></span> <span
+			ctn-city id="city{{city.id}}" ng-repeat="city in game.hand.cities"></span>
+	</div>
+
+
+	<script src="components/ctn-hex/ctn-hex-directive.js"></script>
+	<script src="components/ctn-edge/ctn-edge-directive.js"></script>
+	<script src="components/ctn-vertix/ctn-vertix-directive.js"></script>
+	<script src="components/ctn-droppable/ctn-droppable-directive.js"></script>
+</body>
+</html>

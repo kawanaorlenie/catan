@@ -1,0 +1,113 @@
+.ctn-board {
+	width: 90vw;
+	height: 30vw;
+	background: grey;
+	margin: auto;
+	position: relative;
+	font-size: 0;
+	/*http://stackoverflow.com/questions/19038799/why-is-there-an-unexplainable-gap-between-these-inline-block-div-elements*/
+}
+
+.ctn-row {
+	height: 15vw;
+	position: relative;
+	margin-top: -3.75vw;
+}
+
+.ctn-row:nth-child(even) {
+	left: 6.445vw;
+}
+
+.ctn-row:nth-child(1) {
+	margin-top: 0;
+}
+
+.ctn-hexagon {
+	overflow: hidden;
+}
+
+.ctn-hexagon, .ctn-pathables-inner {
+	display: inline-block;
+	position: absolute;
+	width: 6.495vw;
+	height: 7.5vw;
+}
+
+.ctn-hexagon-inner {
+	height: 100%;
+	width: 100%;
+	background: red;
+	position: absolute;
+	transform: rotate(60deg) skew(-0deg, -30deg);
+}
+
+.ctn-hexagons, .ctn-pathables {
+	position: absolute;
+	top: 0;
+}
+
+.ctn-pathable {
+	width: 1vw;
+	height: 3vw;
+	border: 1px solid yellow;
+	position: absolute;
+	z-index: 100;
+}
+
+div[edge-z="1"] {
+	transform: rotate(60deg);
+}
+
+div[edge-z="3"] {
+	transform: rotate(-60deg);
+
+}
+
+.ctn-buildable{
+	width: 2vw;
+	height: 2vw;
+	border: solid 1px blue;
+	position: absolute;
+}
+
+.ctn-hand{
+	position: relative;
+}
+[ctn-path]{
+	background: grey;
+	position: relative;
+	width: 2vw;
+	height: 3vw;
+	display: inline-block;
+	border: 1px solid red;
+z-index: 99;
+}
+
+[ctn-city]{
+	background: green;
+	position: relative;
+	width: 2vw;
+	height: 2vw;
+	display: inline-block;
+	border: 1px solid red;
+}
+
+[ctn-settlement]{
+	background: blue;
+	position: relative;
+	width: 1.5vw;
+	height: 1.5vw;
+	display: inline-block;
+	border: 1px solid red;
+}
+
+.ctn-placed{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: black;
+}
+
+[ctn-droppable=true]{
+	background: white;
+}
